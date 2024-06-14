@@ -3,7 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
-
+use App\Http\Controllers\AgentController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -21,4 +21,13 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
+
+// Route::middleware(['auth', 'role:admin'])->group(function () {
+//     Route::get('/admin/dashboard', [AdminController::class, 'AdminDashboard'])->name('admin.dashboard');
+// });
+
+// Route::middleware(['auth', 'role:agent'])->group(function () {
+//     Route::get('/agent/dashboard', [AdminController::class, 'AgentDashboard'])->name('agent.dashboard');
+// });
 Route::get('/admin/dashboard', [AdminController::class, 'AdminDashboard'])->name('admin.dashboard');
+Route::get('/agent/dashboard', [AgentController::class, 'AgentDashboard'])->name('agent.dashboard');
