@@ -205,7 +205,7 @@
 										<img class="wd-80 ht-80 rounded-circle" src="{{(!empty($profileData->photo))?url('upload/admin_images/'.$profileData->photo):url('upload/no_image.jpg')}}" alt="">
 									</div>
 									<div class="text-center">
-										<p class="tx-16 fw-bolder">{{$profileData->name}}</p>
+										<p class="tx-16 fw-bolder">{{($profileData->name)}}</p>
 										<p class="tx-12 text-muted">{{$profileData->email}}</p>
 									</div>
 								</div>

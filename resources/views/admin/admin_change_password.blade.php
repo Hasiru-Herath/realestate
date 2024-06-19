@@ -57,7 +57,7 @@
 
 								<h6 class="card-title">Admin Change Password</h6>
 
-								<form method="post" action="{{route('admin.profile.store')}}" enctype="multipart/form-data" class="forms-sample"> 
+								<form method="post" action="{{route('admin.update.password')}}" enctype="multipart/form-data" class="forms-sample"> 
                   @csrf
 									
 									<div class="mb-3">
@@ -82,7 +82,7 @@
                   
                   
 									<div class="mb-3">
-										<label for="exampleInputEmail1" class="form-label">Confirm Password</label>
+										<label for="exampleInputEmail1" class="form-label">Confirm New Password</label>
                     <input type="password" name="confirm_password" class="form-control " id=" confirm_password" autocomplete="off" >
                     @error('confirm_password')
                     <span class="text-danger">
