@@ -46,4 +46,24 @@ class AgentController extends Controller
         return view('agent.agent_change_password',compact('profileData'));
     }
 
+     public function AgentUpdatePassword(Request $request){
+        $request->validate([
+            'old_password'=>'required',
+            'new_password'=>'required',
+            'confirm_password'=>'required|same:new_password',
+        ]);
+
+        if(!Hash::check($request->old_password,Auth::user()->password)){
+            $notification=['message'=>'Old Password Doesn\'t Match','alert-type'=>'error'];
+            return back()->with($notification);
+        }
+
+        User::whereId(auth()->user()->id)->update([
+            'password'=>Hash::make($request->new_password)
+        ]);
+
+        $notification=['message'=>'Password Changed Successfully','alert-type'=>'success'];
+        return back()->with($notification);
+    }
+
 }
