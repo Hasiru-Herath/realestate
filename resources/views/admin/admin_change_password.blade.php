@@ -62,7 +62,7 @@
 									
 									<div class="mb-3">
 										<label for="exampleInputEmail1" class="form-label">Old Password</label>
-                    <input type="password" name="old_password" class="form-control @error ('old_password') is invalid @enderror" id="old_password" autocomplete="off" >
+                    <input type="password" name="old_password" class="form-control @error ('old_password') is invalid" @enderror id="old_password" autocomplete="off" >
                     @error('old_password')
                     <span class="text-danger">
                       {{$message}}

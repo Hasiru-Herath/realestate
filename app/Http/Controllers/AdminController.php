@@ -63,12 +63,13 @@ class AdminController extends Controller
     public function AdminUpdatePassword(Request $request){
         $request->validate([
             'old_password'=>'required',
-            'new_password'=>'required|confirmed',
+            'new_password'=>'required',
+            'confirm_password'=>'required|same:new_password',
         ]);
 
-        if(!Hash::check($request->old_password,auth::user()->password)){
+        if(!Hash::check($request->old_password,Auth::user()->password)){
             $notification=['message'=>'Old Password Doesn\'t Match','alert-type'=>'error'];
-            return back()->with($notification);
+            return redirect()->back()->with($notification);
         }
 
         User::whereId(auth()->user()->id)->update([
