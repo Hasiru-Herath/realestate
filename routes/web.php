@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AgentController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PropertyController;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -50,3 +52,5 @@ Route::middleware(['auth', 'role:agent'])->group(function () {
 Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.login');
 
 
+
+Route::get('/dashboard', [PropertyController::class, 'index'])->name('dashboard');
