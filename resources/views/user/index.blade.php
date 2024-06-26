@@ -1,6 +1,6 @@
-@extends ('agent.agent_dashboard')  
+@extends ('user.dashboard')  
 
-@section('agent')
+@section('user')
 		<div class="page-content">
 
         <div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">

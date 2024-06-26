@@ -9,7 +9,7 @@
 	<meta name="author" content="NobleUI">
 	<meta name="keywords" content="nobleui, bootstrap, bootstrap 5, bootstrap5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
 
-	<title>Admin Panel- Real Estate</title>
+	<title>User Panel- Real Estate</title>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,19 +43,19 @@
 	<div class="main-wrapper">
 
 		<!-- partial:partials/_sidebar.html -->
-		@include('agent.body.sidebar')
+		@include('user.body.sidebar')
 		<!-- partial -->
 	
 		<div class="page-wrapper">
 					
 			<!-- partial:partials/_navbar.html -->
-		@include('agent.body.header')
+		@include('user.body.header')
 			<!-- partial -->
 
-    @yield('agent')
+    @yield('user')
 
 			<!-- partial:partials/_footer.html -->
-		@include('agent.body.footer')
+		@include('user.body.footer')
 			<!-- partial -->
 		
 		</div>
