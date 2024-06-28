@@ -1,6 +1,6 @@
 <style>
         .navbar {
-            width: 70%;
+            width: 85%;
             margin-left: 0;
             padding-left: 0;
         }
@@ -68,7 +68,7 @@
                     </a>
                   </li>
                   <li class="dropdown-item py-2">
-                    <a href="{{ route('admin.logout') }}" class="text-body ms-0">
+                    <a href="{{ route('user.logout') }}" class="text-body ms-0">
                       <i class="me-2 icon-md" data-feather="log-out"></i>
                       <span>Log Out</span>
                     </a>

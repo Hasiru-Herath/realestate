@@ -14,16 +14,16 @@ class UserController extends Controller
         return view('user.index');
     }
 
-    // public function AdminLogout(Request $request): RedirectResponse
-    // {
-    //     Auth::guard('web')->logout();
+    public function UserLogout(Request $request): RedirectResponse
+    {
+        Auth::guard('web')->logout();
 
-    //     $request->session()->invalidate();
+        $request->session()->invalidate();
 
-    //     $request->session()->regenerateToken();
+        $request->session()->regenerateToken();
 
-    //     return redirect('/admin/login');
-    // }
+        return redirect('/login');
+    }
 
     // public function AdminLogin(){
     //     return view('admin.admin_login');

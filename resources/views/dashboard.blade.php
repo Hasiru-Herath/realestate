@@ -73,6 +73,25 @@
             box-sizing: border-box; 
             padding: 0 20px;
         }
+        .sidebar {
+            position: fixed;
+            top: 70px;
+            left: 0;
+            width: 240px;
+            height: 100%;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-right: 1px solid #dee2e6;
+        }
+        .sidebar h4 {
+            margin-bottom: 20px;
+        }
+        .sidebar .form-group {
+            margin-bottom: 15px;
+        }
+        .page-wrapper-full-width {
+            margin-left: 240px;
+        }
     </style>
 </head>
 <body>
@@ -80,6 +99,8 @@
         <div class="header-wrapper">
             @include('user.body.header')
         </div>
+
+       @include('user.body.sidebar')
 
         <div class="page-content">
             <div class="row">
@@ -90,7 +111,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">{{ $property->address }}</h5>
                                 <p class="card-text"><strong>Price:</strong> {{ $property->price }}</p>
-                                <p class="card-text"><strong>Square Feet:</strong> {{ $property->square_ft }}</p>
+                                <p class="card-text"><strong>Square Feet:</strong> {{ $property->square_feet }}</p>
                                 <p class="card-text"><strong>Bedrooms:</strong> {{ $property->bedrooms }}</p>
                                 <p class="card-text"><strong>Bathrooms:</strong> {{ $property->bathrooms }}</p>
                             </div>

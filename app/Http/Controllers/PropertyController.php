@@ -11,4 +11,26 @@ class PropertyController extends Controller
         $properties = Property::all();
         return view('/dashboard', compact('properties'));
     }
+
+    public function filter(Request $request)
+    {
+        $query = Property::query();
+
+        if ($request->filled('price')) {
+            $query->where('price', '<=', $request->price);
+        }
+
+        if ($request->filled('square_feet')) {
+            $query->where('square_feet', '>=', $request->square_feet);
+        }
+
+        // if ($request->filled('area')) {
+        //     $query->where('area', 'like', '%' . $request->area . '%');
+        // }
+
+        $properties = $query->get();
+
+        return view('/dashboard', compact('properties'));
+    }
+
 }

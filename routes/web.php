@@ -51,6 +51,8 @@ Route::middleware(['auth', 'role:agent'])->group(function () {
 
 Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.login');
 
-
-
 Route::get('/dashboard', [PropertyController::class, 'index'])->name('dashboard');
+Route::get('/user/logout', [UserController::class, 'UserLogout'])->name('user.logout');
+Route::get('/filter-properties', [PropertyController::class, 'filter'])->name('user.filter.properties');
+
+
