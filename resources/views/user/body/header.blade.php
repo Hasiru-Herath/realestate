@@ -1,15 +1,32 @@
 <style>
-        .navbar {
-            width: 85%;
-            margin-left: 0;
-            padding-left: 0;
-        }
-        .container {
-            width: 100%;
-            padding: 0;
-            margin: 0;
-        }
-    </style>
+    .navbar {
+        width: 85%;
+        margin-left: 0;
+        padding-left: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .container {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    .navbar-brand {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #fff;
+        margin: 0 15px;
+    }
+    .navbar-content {
+        display: flex;
+        align-items: center;
+    }
+    .navbar-toggler {
+        display: flex;
+        align-items: center;
+    }
+</style>
 
 
 <nav class="navbar">
@@ -17,14 +34,7 @@
 					<i data-feather="menu"></i>
 				</a>
 				<div class="navbar-content">
-					<form class="search-form">
-						<div class="input-group">
-              <div class="input-group-text">
-                <i data-feather="search"></i>
-              </div>
-							<input type="text" class="form-control" id="navbarForm" placeholder="Search here...">
-						</div>
-					</form>
+					
 					<ul class="navbar-nav">
 						<li class="nav-item dropdown">							
 							<div class="text" aria-labelledby="languageDropdown">               

@@ -1,16 +1,17 @@
 <style>
   
   .sidebar {
-            background-color: #343a40;
+            background-color: #0c1427;
             color: #fff;
             padding: 15px;
             border-radius: 0px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         .sidebar h5 {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-weight: 600;
             margin-bottom: 15px;
+            margin-left: 20%;
         }
         .sidebar .form-group {
             margin-bottom: 20px;
@@ -23,17 +24,16 @@
         .sidebar .btn-primary {
             background-color: #17a2b8;
             border: none;
-            width: 100%;
+            width: 75%;
+            margin-left: 12.5%;
         }
         .sidebar .btn-primary:hover {
-            background-color: #138496;
+            background-color: #0d8ba0;
         }
 </style>
 
 <nav class="sidebar">
-        <a href="#" class="sidebar-brand">
-          Real<span>Estate</span>
-        </a>
+        
 
         <div class="col-md-3">
                     <div class="sidebar">
@@ -51,17 +51,28 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="square_feet">Square Feet</label>
-                                <select class="form-control" id="square_feet" name="square_feet">
-                                    <option value="">Select Square Feet</option>
-                                    <option value="0-1000">0 - 1000 sq ft</option>
-                                    <option value="1000-2000">1000 - 2000 sq ft</option>
-                                    <option value="2000-3000">2000 - 3000 sq ft</option>
-                                    <option value="3000-4000">3000 - 4000 sq ft</option>
-                                    <option value="4000+">4000+ sq ft</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
+                              <label for="min_sq_ft">Min Square Feet</label>
+                              <select class="form-control" id="min_sq_ft" name="min_sq_ft">
+                                  <option value="">Select Min Square Feet</option>
+                                  <option value="0">0 sq ft</option>
+                                  <option value="1000">1000 sq ft</option>
+                                  <option value="2000">2000 sq ft</option>
+                                  <option value="3000">3000 sq ft</option>
+                                  <option value="4000">4000 sq ft</option>
+                              </select>
+                          </div>
+                          <div class="form-group">
+                              <label for="max_sq_ft">Max Square Feet</label>
+                              <select class="form-control" id="max_sq_ft" name="max_sq_ft">
+                                  <option value="">Select Max Square Feet</option>
+                                  <option value="1000">1000 sq ft</option>
+                                  <option value="2000">2000 sq ft</option>
+                                  <option value="3000">3000 sq ft</option>
+                                  <option value="4000">4000 sq ft</option>
+                                  <option value="5000">5000 sq ft</option>
+                              </select>
+                          </div>
+                            <!-- <div class="form-group">
                                 <label for="area">Area</label>
                                 <select class="form-control" id="area" name="area">
                                     <option value="">Select Area</option>
@@ -69,7 +80,7 @@
                                     <option value="suburbs">Suburbs</option>
                                     <option value="rural">Rural</option>
                                 </select>
-                            </div>
+                            </div> -->
                             <button type="submit" class="btn btn-primary">Apply Filters</button>
                         </form>
                     </div>

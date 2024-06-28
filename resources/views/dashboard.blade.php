@@ -73,22 +73,6 @@
             box-sizing: border-box; 
             padding: 0 20px;
         }
-        .sidebar {
-            position: fixed;
-            top: 70px;
-            left: 0;
-            width: 240px;
-            height: 100%;
-            padding: 20px;
-            background-color: #f8f9fa;
-            border-right: 1px solid #dee2e6;
-        }
-        .sidebar h4 {
-            margin-bottom: 20px;
-        }
-        .sidebar .form-group {
-            margin-bottom: 15px;
-        }
         .page-wrapper-full-width {
             margin-left: 240px;
         }

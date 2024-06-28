@@ -20,8 +20,15 @@ class PropertyController extends Controller
             $query->where('price', '<=', $request->price);
         }
 
-        if ($request->filled('square_feet')) {
-            $query->where('square_feet', '>=', $request->square_feet);
+        if ($request->filled('min_sq_ft') && $request->filled('max_sq_ft')) {
+            $minSqFt = (int) $request->input('min_sq_ft');
+            $maxSqFt = (int) $request->input('max_sq_ft');
+            
+            // Ensure maxSqFt is greater than minSqFt before applying the filter
+            if ($maxSqFt >= $minSqFt) {
+                $query->whereBetween('square_feet', [$minSqFt, $maxSqFt]);
+            }
+            
         }
 
         // if ($request->filled('area')) {
