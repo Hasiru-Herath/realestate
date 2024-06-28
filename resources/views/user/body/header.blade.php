@@ -13,11 +13,23 @@
         margin: 0;
     }
     .navbar-brand {
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: #fff;
-        margin: 0 15px;
-    }
+    opacity: 1;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #000865;
+    padding-left: 500px;
+    margin: 0 15px;
+    visibility: visible;
+    -webkit-transition: opacity 0.5s ease;
+    transition: opacity 0.5s ease;
+    font-size: 30px;
+    direction: ltr/*rtl:ignore*/;
+    text-shadow: 0 0 1px white, /* light shadow */
+                 0 0 10px rgba(0, 0, 0, 0.3), /* medium shadow */
+                 0 0 15px rgba(0, 0, 0, 0.3); /* dark shadow */
+
+}
+
     .navbar-content {
         display: flex;
         align-items: center;
@@ -26,15 +38,28 @@
         display: flex;
         align-items: center;
     }
+    .navbar-brand span {
+        color:white;
+        font-weight: 700;
+    }
+    
 </style>
 
 
+
+
 <nav class="navbar">
+        
+  
 				<a href="#" class="sidebar-toggler">
 					<i data-feather="menu"></i>
 				</a>
 				<div class="navbar-content">
-					
+        <div class="sidebar-header">
+            <a href="#" class="navbar-brand">
+                Real <span>Estate</span>
+            </a>
+        </div>
 					<ul class="navbar-nav">
 						<li class="nav-item dropdown">							
 							<div class="text" aria-labelledby="languageDropdown">               
@@ -60,7 +85,7 @@
 								</div>
                 <ul class="list-unstyled p-1">
                   <li class="dropdown-item py-2">
-                    <a href="{{ route('agent.profile') }}" class="text-body ms-0">
+                    <a href="{{ route('user.profile') }}" class="text-body ms-0">
                       <i class="me-2 icon-md" data-feather="user"></i>
                       <span>Profile</span>
                     </a>
@@ -71,11 +96,7 @@
                       <span>Change Password </span>
                     </a>
                   </li>
-                  <li class="dropdown-item py-2">
-                    <a href="javascript:;" class="text-body ms-0">
-                      <i class="me-2 icon-md" data-feather="repeat"></i>
-                      <span>Switch User</span>
-                    </a>
+                  
                   </li>
                   <li class="dropdown-item py-2">
                     <a href="{{ route('user.logout') }}" class="text-body ms-0">

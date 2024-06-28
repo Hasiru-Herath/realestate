@@ -4,6 +4,7 @@
             background-color: #0c1427;
             color: #fff;
             padding: 15px;
+            padding-top: 70px;
             border-radius: 0px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
@@ -32,8 +33,7 @@
         }
 </style>
 
-<nav class="sidebar">
-        
+<nav class="sidebar">       
 
         <div class="col-md-3">
                     <div class="sidebar">

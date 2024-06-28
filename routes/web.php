@@ -54,5 +54,9 @@ Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.
 Route::get('/dashboard', [PropertyController::class, 'index'])->name('dashboard');
 Route::get('/user/logout', [UserController::class, 'UserLogout'])->name('user.logout');
 Route::get('/filter-properties', [PropertyController::class, 'filter'])->name('user.filter.properties');
+Route::get('/user/profile', [UserController::class, 'UserProfile'])->name('user.profile');
+Route::post('/user/profile/store', [UserController::class, 'UserProfileStore'])->name('user.profile.store');
+
+
 
 

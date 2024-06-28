@@ -38,6 +38,8 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
 
     <!-- Custom CSS for card styling -->
+
+    
     <style>
         .card-custom {
             border-radius: 10px;

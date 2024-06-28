@@ -29,30 +29,30 @@ class UserController extends Controller
     //     return view('admin.admin_login');
     // }
 
-    // public function AdminProfile(){
-    //     $id=Auth::user()->id;
-    //     $profileData=User::find($id);
-    //     return view('admin.admin_profile_view',compact('profileData'));
-    // }
+    public function UserProfile(){
+        $id=Auth::user()->id;
+        $profileData=User::find($id);
+        return view('user.user_profile_view',compact('profileData'));
+    }
 
-    // public function AdminProfileStore(Request $request){
-    //     $id=Auth::user()->id;
-    //     $data=User::find($id);
-    //     $data->username=$request->username;
-    //     $data->name=$request->name;
-    //     $data->email=$request->email;
-    //     $data->address=$request->address;
-    //     if($request->file('photo')){
-    //         $file=$request->file('photo');
-    //         @unlink(public_path('upload/admin_images/'.$data->photo));
-    //         $filename=date('YmdHi').$file->getClientOriginalName();
-    //         $file->move(public_path('upload/admin_images'),$filename);
-    //         $data['photo']=$filename;
-    //     }
-    //     $data->save();
-    //     $notification=['message'=>'Admin Profile Updated Successfully','alert-type'=>'success'];
-    //     return redirect()->route('admin.profile')->with($notification);
-    // }
+    public function UserProfileStore(Request $request){
+        $id=Auth::user()->id;
+        $data=User::find($id);
+        $data->username=$request->username;
+        $data->name=$request->name;
+        $data->email=$request->email;
+        $data->address=$request->address;
+        if($request->file('photo')){
+            $file=$request->file('photo');
+            @unlink(public_path('upload/admin_images/'.$data->photo));
+            $filename=date('YmdHi').$file->getClientOriginalName();
+            $file->move(public_path('upload/admin_images'),$filename);
+            $data['photo']=$filename;
+        }
+        $data->save();
+        $notification=['message'=>'Admin Profile Updated Successfully','alert-type'=>'success'];
+        return redirect()->route('user.profile')->with($notification);
+    }
 
     // public function AdminChangePassword(){
     //     $id=Auth::user()->id;
