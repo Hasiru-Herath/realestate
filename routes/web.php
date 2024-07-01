@@ -56,6 +56,10 @@ Route::get('/user/logout', [UserController::class, 'UserLogout'])->name('user.lo
 Route::get('/filter-properties', [PropertyController::class, 'filter'])->name('user.filter.properties');
 Route::get('/user/profile', [UserController::class, 'UserProfile'])->name('user.profile');
 Route::post('/user/profile/store', [UserController::class, 'UserProfileStore'])->name('user.profile.store');
+Route::get('/user/change/password', [UserController::class, 'UserChangePassword'])->name('user.change.password');   
+Route::post('/user/update/password', [UserController::class, 'UserUpdatePassword'])->name('user.update.password');              
+
+
 
 
 

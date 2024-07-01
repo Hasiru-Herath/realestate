@@ -1,5 +1,5 @@
-@extends ('agent.agent_dashboard')  
-@section('agent')
+@extends ('user.user_dashboard')  
+@section('user')
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 <div class="page-content">
@@ -55,7 +55,7 @@
             <div class="card">
               <div class="card-body">
 
-								<h6 class="card-title">Agent Change Password</h6>
+								<h6 class="card-title">User Change Password</h6>
 
 								<form method="POST" action="{{route('agent.update.password')}}" enctype="multipart/form-data" class="forms-sample"> 
                   @csrf

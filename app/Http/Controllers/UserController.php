@@ -54,29 +54,29 @@ class UserController extends Controller
         return redirect()->route('user.profile')->with($notification);
     }
 
-    // public function AdminChangePassword(){
-    //     $id=Auth::user()->id;
-    //     $profileData=User::find($id);
-    //     return view('admin.admin_change_password',compact('profileData'));
-    // }
+    public function UserChangePassword(){
+        $id=Auth::user()->id;
+        $profileData=User::find($id);
+        return view('user.user_change_password',compact('profileData'));
+    }
 
-    // public function AdminUpdatePassword(Request $request){
-    //     $request->validate([
-    //         'old_password'=>'required',
-    //         'new_password'=>'required',
-    //         'confirm_password'=>'required|same:new_password',
-    //     ]);
+    public function UserUpdatePassword(Request $request){
+        $request->validate([
+            'old_password'=>'required',
+            'new_password'=>'required',
+            'confirm_password'=>'required|same:new_password',
+        ]);
 
-    //     if(!Hash::check($request->old_password,Auth::user()->password)){
-    //         $notification=['message'=>'Old Password Doesn\'t Match','alert-type'=>'error'];
-    //         return redirect()->back()->with($notification);
-    //     }
+        if(!Hash::check($request->old_password,Auth::user()->password)){
+            $notification=['message'=>'Old Password Doesn\'t Match','alert-type'=>'error'];
+            return redirect()->back()->with($notification);
+        }
 
-    //     User::whereId(auth()->user()->id)->update([
-    //         'password'=>Hash::make($request->new_password)
-    //     ]);
+        User::whereId(auth()->user()->id)->update([
+            'password'=>Hash::make($request->new_password)
+        ]);
 
-    //     $notification=['message'=>'Password Changed Successfully','alert-type'=>'success'];
-    //     return back()->with($notification);
-    // }
+        $notification=['message'=>'Password Changed Successfully','alert-type'=>'success'];
+        return back()->with($notification);
+    }
 }
