@@ -60,6 +60,9 @@ Route::get('/user/change/password', [UserController::class, 'UserChangePassword'
 Route::post('/user/update/password', [UserController::class, 'UserUpdatePassword'])->name('user.update.password');              
 
 
+Route::post('/properties', [PropertyController::class, 'store'])->name('properties.store');
+
+
 
 
 

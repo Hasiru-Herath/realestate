@@ -40,4 +40,37 @@ class PropertyController extends Controller
         return view('/dashboard', compact('properties'));
     }
 
+
+    public function store(Request $request)
+    {
+        // Validate the form data
+        $request->validate([
+            'address' => 'required|string|max:255',
+            'price' => 'required|numeric',
+            'square_feet' => 'required|numeric',
+            'bedrooms' => 'required|numeric',
+            'bathrooms' => 'required|numeric',
+            'photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        // Handle the photo upload
+        if ($request->hasFile('photo')) {
+            $photo = $request->file('photo');
+            $photoPath = $photo->store('photos', 'public');
+        }
+
+        // Create a new property
+        $property = new Property();
+        $property->address = $request->address;
+        $property->price = $request->price;
+        $property->square_feet = $request->square_feet;
+        $property->bedrooms = $request->bedrooms;
+        $property->bathrooms = $request->bathrooms;
+        $property->photo = $photoPath ?? null;
+        $property->save();
+
+        // Redirect back with a success message
+        return redirect()->back()->with('message', 'Property added successfully!')->with('alert-type', 'success');
+    }
+
 }
