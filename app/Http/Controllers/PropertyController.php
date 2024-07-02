@@ -92,6 +92,20 @@ class PropertyController extends Controller
 
         return view('agent.properties.history', compact('properties'));
     }
+    public function destroy($id)
+    {
+        // Find the property by id and delete it
+        $property = Property::findOrFail($id);
+
+        // Ensure the authenticated user is the owner of the property
+        if ($property->agent_id !== Auth::id()) {
+            return redirect()->back()->with('message', 'Unauthorized action')->with('alert-type', 'error');
+        }
+
+        $property->delete();
+
+        return redirect()->route('agent.properties.history')->with('message', 'Property deleted successfully')->with('alert-type', 'success');
+    }
 
 
 }

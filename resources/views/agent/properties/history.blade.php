@@ -1,3 +1,4 @@
+<!-- resources/views/agent/properties/history.blade.php -->
 @extends('agent.agent_dashboard')
 
 @section('agent')
@@ -24,6 +25,7 @@
                                         <th>Bathrooms</th>
                                         <th>Photo</th>
                                         <th>Added On</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -31,7 +33,7 @@
                                         <tr>
                                             <td>{{ $property->address }}</td>
                                             <td>{{ $property->price }}</td>
-                                            <td>{{ $property->square_feet }}</td>
+                                            <td>{{ $property->square_ft }}</td>
                                             <td>{{ $property->bedrooms }}</td>
                                             <td>{{ $property->bathrooms }}</td>
                                             <td>
@@ -42,6 +44,13 @@
                                                 @endif
                                             </td>
                                             <td>{{ $property->created_at->format('d M Y') }}</td>
+                                            <td>
+                                                <form action="{{ route('properties.destroy', $property->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this property?');">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                                </form>
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>
