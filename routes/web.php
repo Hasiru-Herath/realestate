@@ -43,7 +43,9 @@ Route::middleware(['auth', 'role:agent'])->group(function () {
     Route::get('/agent/profile', [AgentController::class, 'AgentProfile'])->name('agent.profile');
     Route::post('/agent/profile/store', [AgentController::class, 'AgentProfileStore'])->name('agent.profile.store');
     Route::get('/agent/change/password', [AgentController::class, 'AgentChangePassword'])->name('agent.change.password');   
-    Route::post('/agent/update/password', [AgentController::class, 'AgentUpdatePassword'])->name('agent.update.password');              
+    Route::post('/agent/update/password', [AgentController::class, 'AgentUpdatePassword'])->name('agent.update.password');    
+    Route::get('/agent/properties/history', [PropertyController::class, 'history'])->name('agent.properties.history');
+          
 });
 
 
@@ -61,9 +63,4 @@ Route::post('/user/update/password', [UserController::class, 'UserUpdatePassword
 
 
 Route::post('/properties', [PropertyController::class, 'store'])->name('properties.store');
-
-
-
-
-
 

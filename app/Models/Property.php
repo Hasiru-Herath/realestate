@@ -16,4 +16,7 @@ class Property extends Model
         'bathrooms',
         'photo',
     ];
+
+
+    
 }

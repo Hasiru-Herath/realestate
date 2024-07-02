@@ -17,7 +17,7 @@
             <div class="card">
               <div class="card-body">
               <div class="card-body">
-                        <h5 class="card-title" style="text-align: center;">Add New Property</h5>
+                        <h5 class="card-title" style="text-align: center;font-size: 20px">Add New Property</h5>
                         <form action="{{ route('properties.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
@@ -44,6 +44,7 @@
                                 <label for="photo">Property Photo</label>
                                 <input type="file" class="form-control" id="photo" name="photo" required>
                             </div>
+                            
                             <button type="submit" class="btn btn-primary mt-3">Submit</button>
                         </form>
                 
